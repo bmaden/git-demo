@@ -8,4 +8,10 @@ public class AppTest {
         App classUnderTest = new App();
         assertNotNull("app should have a greeting", classUnderTest.getGreeting());
     }
+
+    @Test public void simpleAddWorks() {
+        final App app = new App();
+        Integer sum = app.add(2, 2);
+        assertEquals(Integer.valueOf(4), sum);
+    }
 }
