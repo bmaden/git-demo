@@ -6,6 +6,7 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+    id "com.diffplug.spotless" version "6.9.0"
 }
 
 repositories {
@@ -19,6 +20,15 @@ dependencies {
 
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:31.0.1-jre'
+}
+
+spotless {
+    java {
+        importOrder()
+        removeUnusedImports()
+        googleJavaFormat()
+        targetExclude("build/generated/sources/**/*.java")
+    }
 }
 
 application {
