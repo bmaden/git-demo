@@ -20,4 +20,10 @@ public class AppTest {
         IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> app.divide(1., 0.));
         assertEquals("divisor must not be zero", e.getMessage());
     }
+
+    @Test public void simpleAddWorks() {
+        final App app = new App();
+        Integer sum = app.add(2, 2);
+        assertEquals(Integer.valueOf(4), sum);
+    }
 }
