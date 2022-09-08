@@ -9,6 +9,10 @@ public class App {
         return a + b;
     }
 
+    public Integer subtract(final Integer a, final Integer b) {
+        return a - b;
+    }
+
     public Double divide(final Double dividend, final Double divisor) {
         if (divisor == 0.) {
             throw new IllegalArgumentException("divisor must not be zero");

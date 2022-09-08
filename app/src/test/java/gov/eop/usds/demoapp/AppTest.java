@@ -26,4 +26,10 @@ public class AppTest {
         Integer sum = app.add(2, 2);
         assertEquals(Integer.valueOf(4), sum);
     }
+
+    @Test public void subtractWorks() {
+        final App app = new App();
+        Integer difference = app.subtract(10, 5);
+        assertEquals(Integer.valueOf(5), difference);
+    }
 }
