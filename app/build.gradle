@@ -6,6 +6,7 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+    id "com.diffplug.spotless" version "6.9.0"
 }
 
 repositories {
@@ -23,6 +24,15 @@ dependencies {
     // new dependency
     implementation 'org.apache.logging.log4j:log4j-api:2.15.0'
     implementation 'org.apache.logging.log4j:log4j-core:2.15.0'
+}
+
+spotless {
+    java {
+        importOrder()
+        removeUnusedImports()
+        googleJavaFormat()
+        targetExclude("build/generated/sources/**/*.java")
+    }
 }
 
 application {
