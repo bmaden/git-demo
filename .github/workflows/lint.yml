@@ -1,0 +1,27 @@
+name: Lint
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - "**"
+  push:
+    branches:
+      - main
+
+env:
+  JAVA_VERSION: 18
+
+jobs:
+  backend-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK ${{env.JAVA_VERSION}}
+        uses: actions/setup-java@v3
+        with:
+          distribution: adopt
+          java-version: ${{env.JAVA_VERSION}}
+          cache: gradle
+      - name: Run style checks
+        run: ./gradlew spotlessCheck --continue
