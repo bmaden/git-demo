@@ -1,8 +1,6 @@
 version: 2
-
-# for the future
 updates:
   - package-ecosystem: gradle
-    directory: /
+    directory: /app
     schedule:
       interval: weekly
