@@ -2,7 +2,7 @@ version: 2
 
 # for the future
 updates:
-  - package-ecosystem: maven
+  - package-ecosystem: gradle
     directory: /
     schedule:
       interval: weekly
